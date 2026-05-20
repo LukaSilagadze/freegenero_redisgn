@@ -40,10 +40,8 @@
   z-index: 20;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   gap: 24px;
-  width: min(var(--max), calc(100% - 48px));
-  margin: 0 auto;
   padding: 22px 0;
   background: rgba(255, 255, 255, 0.86);
   backdrop-filter: blur(18px);
@@ -99,9 +97,25 @@
 }
 
 .nav-links a:hover,
+.nav-links a.active,
 .nav-login:hover,
 .footer-links a:hover {
   color: var(--blue-700);
+}
+
+.nav-links a.active {
+  position: relative;
+}
+
+.nav-links a.active::after {
+  position: absolute;
+  right: 0;
+  bottom: -9px;
+  left: 0;
+  height: 3px;
+  content: "";
+  border-radius: 999px;
+  background: var(--orange);
 }
 
 .nav-actions {
@@ -765,6 +779,233 @@ p {
   margin-bottom: 0;
 }
 
+.page-hero {
+  display: grid;
+  min-height: 460px;
+  align-items: center;
+  padding-top: 112px;
+  padding-bottom: 76px;
+}
+
+.page-hero > div {
+  max-width: 900px;
+}
+
+.page-hero h1 {
+  max-width: 900px;
+  font-size: clamp(3rem, 6vw, 5.6rem);
+}
+
+.page-hero p:not(.eyebrow) {
+  max-width: 760px;
+  font-size: 1.18rem;
+}
+
+.page-section {
+  padding-top: 32px;
+}
+
+.course-card {
+  min-height: 330px;
+}
+
+.about-layout,
+.contact-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1fr);
+  gap: 28px;
+  align-items: start;
+  padding-top: 28px;
+}
+
+.story-panel,
+.contact-card,
+.form-card,
+.news-card,
+.gallery-card {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--paper);
+  box-shadow: var(--soft-shadow);
+}
+
+.story-panel {
+  padding: 36px;
+  background:
+    radial-gradient(circle at 12% 18%, rgba(255, 217, 106, 0.26), transparent 14rem),
+    #ffffff;
+}
+
+.value-list {
+  display: grid;
+  gap: 16px;
+}
+
+.value-list article {
+  padding: 26px;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  background: var(--blue-50);
+}
+
+.value-list p,
+.role-card p {
+  margin-bottom: 0;
+}
+
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.news-card {
+  min-height: 340px;
+  padding: 30px;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    border-color 180ms ease;
+}
+
+.news-card:hover,
+.gallery-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(31, 99, 199, 0.24);
+  box-shadow: var(--shadow);
+}
+
+.news-card span {
+  display: inline-flex;
+  margin-bottom: 20px;
+  padding: 8px 11px;
+  border-radius: 999px;
+  color: var(--blue-800);
+  background: var(--blue-50);
+  font-size: 0.76rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  padding-top: 32px;
+}
+
+.gallery-card {
+  overflow: hidden;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    border-color 180ms ease;
+}
+
+.gallery-card h3 {
+  padding: 22px 24px 24px;
+  margin: 0;
+}
+
+.gallery-art {
+  display: grid;
+  place-items: center;
+  min-height: 230px;
+  color: #ffffff;
+}
+
+.gallery-art-1 {
+  background:
+    radial-gradient(circle at 28% 24%, rgba(255, 217, 106, 0.8), transparent 5rem),
+    linear-gradient(135deg, var(--blue-700), var(--blue-950));
+}
+
+.gallery-art-2 {
+  background:
+    radial-gradient(circle at 72% 28%, rgba(246, 169, 53, 0.72), transparent 5rem),
+    linear-gradient(135deg, #27b589, var(--blue-800));
+}
+
+.gallery-art-3 {
+  background:
+    radial-gradient(circle at 22% 72%, rgba(255, 217, 106, 0.75), transparent 5rem),
+    linear-gradient(135deg, #6d8dff, var(--blue-900));
+}
+
+.role-list {
+  display: grid;
+  gap: 16px;
+}
+
+.role-card {
+  grid-template-columns: 92px 1fr auto;
+}
+
+.role-card .text-link {
+  margin-top: 0;
+}
+
+.contact-card,
+.form-card {
+  padding: 34px;
+}
+
+.contact-card {
+  background:
+    radial-gradient(circle at 88% 16%, rgba(255, 217, 106, 0.3), transparent 12rem),
+    var(--blue-50);
+}
+
+.contact-methods {
+  display: grid;
+  gap: 14px;
+  margin-top: 28px;
+}
+
+.contact-methods a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--blue-900);
+  font-weight: 850;
+}
+
+.form-card {
+  display: grid;
+  gap: 18px;
+}
+
+.form-card label {
+  display: grid;
+  gap: 8px;
+  color: var(--blue-950);
+  font-weight: 850;
+}
+
+.form-card input,
+.form-card textarea {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 15px 16px;
+  color: var(--blue-950);
+  background: #ffffff;
+  outline: none;
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.form-card input:focus,
+.form-card textarea:focus {
+  border-color: var(--blue-700);
+  box-shadow: 0 0 0 4px rgba(31, 99, 199, 0.1);
+}
+
+.form-card textarea {
+  resize: vertical;
+}
+
 .footer {
   display: flex;
   justify-content: space-between;
@@ -829,9 +1070,37 @@ p {
     width: min(100% - 36px, var(--max));
   }
 
-  .nav-links,
   .nav-login,
   .nav-actions .button {
+    display: none;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 72px;
+    right: 18px;
+    left: 18px;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 14px;
+    border: 1px solid var(--line);
+    border-radius: 22px;
+    background: rgba(255, 255, 255, 0.98);
+    box-shadow: var(--shadow);
+  }
+
+  .nav-links.nav-links-open {
+    display: flex;
+  }
+
+  .nav-links a {
+    padding: 14px;
+    border-radius: 14px;
+  }
+
+  .nav-links a.active::after {
     display: none;
   }
 
@@ -853,7 +1122,11 @@ p {
   .problem-grid,
   .card-grid.three,
   .solution-panel,
-  .podcast-card {
+  .podcast-card,
+  .news-grid,
+  .gallery-grid,
+  .about-layout,
+  .contact-layout {
     grid-template-columns: 1fr;
   }
 
@@ -987,9 +1260,31 @@ p {
   }
 
   .podcast-card,
-  .final-cta {
+  .final-cta,
+  .story-panel,
+  .contact-card,
+  .form-card,
+  .news-card {
     padding: 28px;
     border-radius: 26px;
+  }
+
+  .page-hero {
+    min-height: auto;
+    padding-top: 70px;
+    padding-bottom: 42px;
+  }
+
+  .page-hero h1 {
+    font-size: clamp(2.55rem, 13vw, 4.2rem);
+  }
+
+  .gallery-art {
+    min-height: 190px;
+  }
+
+  .role-card {
+    grid-template-columns: 1fr;
   }
 
   .podcast-art {

@@ -1,4 +1,5 @@
 import { useLanguage } from '../i18n/LanguageContext';
+import whiteLogo from '../assets/white.png';
 import RouteLink from './RouteLink';
 
 const footerSections = [
@@ -59,7 +60,7 @@ function Footer() {
         <div className="footer-brand-block">
           <RouteLink className="brand footer-brand" to="/">
             <span className="footer-logo-surface">
-              <img src="src\assets\white.png" alt="Freegenero logo" className="navbar-logo" />
+              <img src={whiteLogo} alt="Freegenero logo" className="navbar-logo" />
             </span>
           </RouteLink>
           <p>{t('footer.copy')}</p>

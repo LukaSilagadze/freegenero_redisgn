@@ -260,6 +260,24 @@
   border-radius: var(--radius-md);
 }
 
+.problem-card:nth-child(1) {
+  background:
+    radial-gradient(circle at 86% 16%, rgba(255, 217, 106, 0.42), transparent 8rem),
+    #ffffff;
+}
+
+.problem-card:nth-child(2) {
+  background:
+    radial-gradient(circle at 84% 18%, rgba(39, 181, 137, 0.22), transparent 8rem),
+    #ffffff;
+}
+
+.problem-card:nth-child(3) {
+  background:
+    radial-gradient(circle at 84% 18%, rgba(31, 99, 199, 0.18), transparent 8rem),
+    #ffffff;
+}
+
 .problem-card span {
   color: var(--orange);
   font-weight: 950;
@@ -310,7 +328,10 @@
   width: 100%;
   padding-right: max(24px, calc((100% - var(--max)) / 2));
   padding-left: max(24px, calc((100% - var(--max)) / 2));
-  background: var(--soft);
+  background:
+    radial-gradient(circle at 12% 12%, rgba(255, 217, 106, 0.28), transparent 18rem),
+    radial-gradient(circle at 88% 88%, rgba(39, 181, 137, 0.14), transparent 18rem),
+    var(--soft);
 }
 
 .split-heading {
@@ -414,6 +435,24 @@
     transform 180ms ease,
     box-shadow 180ms ease,
     border-color 180ms ease;
+}
+
+.benefit-card:nth-child(1) {
+  background:
+    radial-gradient(circle at 86% 16%, rgba(255, 217, 106, 0.32), transparent 8rem),
+    #ffffff;
+}
+
+.benefit-card:nth-child(2) {
+  background:
+    radial-gradient(circle at 86% 16%, rgba(39, 181, 137, 0.22), transparent 8rem),
+    #ffffff;
+}
+
+.benefit-card:nth-child(3) {
+  background:
+    radial-gradient(circle at 86% 16%, rgba(31, 99, 199, 0.2), transparent 8rem),
+    #ffffff;
 }
 
 .benefit-card:hover {

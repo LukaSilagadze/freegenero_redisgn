@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Facebook, Instagram, Menu } from 'lucide-react';
 import { navItems } from '../content';
 import { useLanguage } from '../i18n/LanguageContext';
+import whiteLogo from '../assets/white.png';
 import RouteLink from './RouteLink';
 
 const socialLinks = [
@@ -45,7 +46,7 @@ function Navbar({ currentPath }) {
   return (
     <header className="navbar">
       <RouteLink className="brand" to="/" onNavigate={closeMenu} aria-label={t('common.brandHome')}>
-        <img src="src\assets\blue2.png" alt="logo" className='navbar-logo'/>
+        <img src={whiteLogo} alt="Freegenero logo" className="navbar-logo" />
       </RouteLink>
       <nav className={`nav-links ${menuOpen ? 'nav-links-open' : ''}`} aria-label={t('common.primaryNavigation')}>
         {navItems.map((item) => (

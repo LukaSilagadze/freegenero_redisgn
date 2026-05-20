@@ -344,7 +344,7 @@ h1 {
 h2 {
   margin-bottom: 18px;
   color: var(--blue-950);
-  font-size: clamp(2rem, 4vw, 3.45rem);
+  font-size: 30px;
   font-weight: 900;
   line-height: 1.04;
 }

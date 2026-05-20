@@ -26,7 +26,6 @@ function Home() {
       <Problem />
       <Solution />
       <Programs />
-      <Benefits />
       <FinalCta />
     </>
   );

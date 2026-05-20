@@ -13,7 +13,8 @@ const getInitialLanguage = () => {
 
 const getTranslation = (language, key) => {
   const value = key.split('.').reduce((current, part) => current?.[part], translations[language]);
-  return typeof value === 'string' ? value : key;
+  const fallbackValue = key.split('.').reduce((current, part) => current?.[part], translations.en);
+  return typeof value === 'string' ? value : fallbackValue || key;
 };
 
 export function LanguageProvider({ children }) {

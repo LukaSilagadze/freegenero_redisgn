@@ -1,0 +1,22 @@
+.role-list {
+  display: grid;
+  gap: 16px;
+}
+
+.role-card {
+  grid-template-columns: 92px 1fr auto;
+}
+
+.role-card .text-link {
+  margin-top: 0;
+}
+
+.role-card p {
+  margin-bottom: 0;
+}
+
+@media (max-width: 680px) {
+  .role-card {
+    grid-template-columns: 1fr;
+  }
+}

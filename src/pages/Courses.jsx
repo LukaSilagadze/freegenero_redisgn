@@ -3,6 +3,7 @@ import { courses } from '../content';
 import FeatureCard from '../components/FeatureCard';
 import FinalCta from '../components/FinalCta';
 import PageHero from '../components/PageHero';
+import '../styles/pages/Courses/Courses.css';
 
 function Courses() {
   return (

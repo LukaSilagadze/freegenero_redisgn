@@ -1,6 +1,7 @@
 import { Image } from 'lucide-react';
 import { galleryItems } from '../content';
 import PageHero from '../components/PageHero';
+import '../styles/pages/Gallery/Gallery.css';
 
 function Gallery() {
   return (

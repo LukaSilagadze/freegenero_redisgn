@@ -1,5 +1,6 @@
 import { Mail, Phone, Send } from 'lucide-react';
 import PageHero from '../components/PageHero';
+import '../styles/pages/Contact/Contact.css';
 
 function Contact() {
   return (

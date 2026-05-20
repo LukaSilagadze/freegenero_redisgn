@@ -1,5 +1,6 @@
 import { Building2 } from 'lucide-react';
 import PageHero from '../components/PageHero';
+import '../styles/pages/AboutUs/AboutUs.css';
 
 function AboutUs() {
   return (

@@ -1,6 +1,7 @@
 import { ChevronRight, Newspaper } from 'lucide-react';
 import { newsItems } from '../content';
 import PageHero from '../components/PageHero';
+import '../styles/pages/News/News.css';
 
 function News() {
   return (

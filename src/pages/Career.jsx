@@ -2,6 +2,7 @@ import { BriefcaseBusiness, ChevronRight } from 'lucide-react';
 import { roles } from '../content';
 import PageHero from '../components/PageHero';
 import RouteLink from '../components/RouteLink';
+import '../styles/pages/Career/Career.css';
 
 function Career() {
   return (

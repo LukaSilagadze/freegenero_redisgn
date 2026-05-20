@@ -16,6 +16,7 @@ import { benefits, events, interviews, programs } from '../content';
 import FeatureCard from '../components/FeatureCard';
 import FinalCta from '../components/FinalCta';
 import RouteLink from '../components/RouteLink';
+import '../styles/pages/Home/Home.css';
 
 function Home() {
   return (
@@ -24,8 +25,6 @@ function Home() {
       <Problem />
       <Solution />
       <Programs />
-      <Events />
-      <Interviews />
       <Benefits />
       <FinalCta />
     </>
@@ -37,10 +36,9 @@ function Hero() {
     <section className="hero section" id="top">
       <div className="hero-copy">
         <p className="eyebrow">
-          <Sparkles size={16} />
           Career discovery for teenagers
         </p>
-        <h1>Help teens find direction before they have to choose a path.</h1>
+        <h1 className='hero-h1'>Help teens find direction before they have to choose a path.</h1>
         <p className="hero-lede">
           Freegenero helps students explore careers, learn practical skills, and
           connect with professionals through guided programs built for real life.
@@ -49,10 +47,6 @@ function Hero() {
           <RouteLink className="button button-primary" to="/courses">
             Explore courses
             <ArrowRight size={18} />
-          </RouteLink>
-          <RouteLink className="button button-secondary" to="/news">
-            Read stories
-            <Play size={17} />
           </RouteLink>
         </div>
         <div className="trust-row" aria-label="Freegenero highlights">

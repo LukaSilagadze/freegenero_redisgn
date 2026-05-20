@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Facebook, Instagram, Menu } from 'lucide-react';
 import { navItems } from '../content';
+import { useLanguage } from '../i18n/LanguageContext';
 import RouteLink from './RouteLink';
 
 const socialLinks = [
@@ -11,9 +12,10 @@ const socialLinks = [
   },
   {
     label: 'Facebook',
-    href: 'https://www.facebook.com/freegenero',
+    href: 'https://www.facebook.com/profile.php?id=61583660060389',
     icon: Facebook,
   },
+
 ];
 
 function TikTokIcon({ size = 18 }) {
@@ -36,16 +38,16 @@ function TikTokIcon({ size = 18 }) {
 
 function Navbar({ currentPath }) {
   const [menuOpen, setMenuOpen] = useState(false);
+  const { language, setLanguage, t } = useLanguage();
 
   const closeMenu = () => setMenuOpen(false);
 
   return (
     <header className="navbar">
-      <RouteLink className="brand" to="/" onNavigate={closeMenu} aria-label="Freegenero home">
-        <span className="brand-mark">F</span>
-        <span>Freegenero</span>
+      <RouteLink className="brand" to="/" onNavigate={closeMenu} aria-label={t('common.brandHome')}>
+        <img src="src\assets\blue2.png" alt="logo" className='navbar-logo'/>
       </RouteLink>
-      <nav className={`nav-links ${menuOpen ? 'nav-links-open' : ''}`} aria-label="Primary navigation">
+      <nav className={`nav-links ${menuOpen ? 'nav-links-open' : ''}`} aria-label={t('common.primaryNavigation')}>
         {navItems.map((item) => (
           <RouteLink
             key={item.to}
@@ -53,12 +55,30 @@ function Navbar({ currentPath }) {
             to={item.to}
             onNavigate={closeMenu}
           >
-            {item.label}
+            {t(item.labelKey)}
           </RouteLink>
         ))}
       </nav>
       <div className="nav-actions">
-        <div className="social-links" aria-label="Freegenero social media">
+        <div className="language-switcher" aria-label={t('common.languageSwitcher')} role="group">
+          <button
+            aria-pressed={language === 'en'}
+            className={language === 'en' ? 'language-option active' : 'language-option'}
+            onClick={() => setLanguage('en')}
+            type="button"
+          >
+            EN
+          </button>
+          <button
+            aria-pressed={language === 'ka'}
+            className={language === 'ka' ? 'language-option active' : 'language-option'}
+            onClick={() => setLanguage('ka')}
+            type="button"
+          >
+            KA
+          </button>
+        </div>
+        <div className="social-links" aria-label={t('common.socialMedia')}>
           {socialLinks.map((item) => {
             const Icon = item.icon;
             return (
@@ -78,7 +98,7 @@ function Navbar({ currentPath }) {
           <a
             aria-label="TikTok"
             className="social-button"
-            href="https://www.tiktok.com/@freegenero"
+            href="https://www.tiktok.com/@freegenero_"
             rel="noreferrer"
             target="_blank"
             title="TikTok"
@@ -89,7 +109,7 @@ function Navbar({ currentPath }) {
         <button
           className="menu-button"
           type="button"
-          aria-label="Toggle navigation menu"
+          aria-label={t('common.toggleNavigation')}
           aria-expanded={menuOpen}
           onClick={() => setMenuOpen((open) => !open)}
         >

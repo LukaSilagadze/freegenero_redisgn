@@ -1,20 +1,23 @@
 import { Mail, Phone, Send } from 'lucide-react';
 import PageHero from '../components/PageHero';
+import { useLanguage } from '../i18n/LanguageContext';
 import '../styles/pages/Contact/Contact.css';
 
 function Contact() {
+  const { t } = useLanguage();
+
   return (
     <>
       <PageHero
-        eyebrow="Contact"
+        eyebrow={t('pages.contactEyebrow')}
         icon={Mail}
-        title="Talk to Freegenero."
-        copy="Reach out about courses, school partnerships, workshops, interviews, or career opportunities."
+        title={t('pages.contactTitle')}
+        copy={t('pages.contactCopy')}
       />
       <section className="section contact-layout">
         <div className="contact-card">
-          <h2>Start a conversation</h2>
-          <p>Tell us what you are building for students and we will help you find the right next step.</p>
+          <h2>{t('contact.cardTitle')}</h2>
+          <p>{t('contact.cardCopy')}</p>
           <div className="contact-methods">
             <a href="mailto:hello@freegenero.com">
               <Mail size={18} />
@@ -28,19 +31,19 @@ function Contact() {
         </div>
         <form className="form-card">
           <label>
-            Name
-            <input type="text" name="name" placeholder="Your name" />
+            {t('contact.name')}
+            <input type="text" name="name" placeholder={t('contact.namePlaceholder')} />
           </label>
           <label>
-            Email
-            <input type="email" name="email" placeholder="you@example.com" />
+            {t('contact.email')}
+            <input type="email" name="email" placeholder={t('contact.emailPlaceholder')} />
           </label>
           <label>
-            Message
-            <textarea name="message" rows="5" placeholder="How can Freegenero help?" />
+            {t('contact.message')}
+            <textarea name="message" rows="5" placeholder={t('contact.messagePlaceholder')} />
           </label>
           <button className="button button-primary" type="button">
-            Send message
+            {t('contact.send')}
             <Send size={18} />
           </button>
         </form>

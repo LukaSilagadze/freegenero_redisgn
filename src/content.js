@@ -12,158 +12,158 @@ import {
 } from 'lucide-react';
 
 export const navItems = [
-  { label: 'Home', to: '/' },
-  { label: 'Courses', to: '/courses' },
-  { label: 'About Us', to: '/about' },
-  { label: 'News', to: '/news' },
-  { label: 'Gallery', to: '/gallery' },
-  { label: 'Career', to: '/career' },
-  { label: 'Contact', to: '/contact' },
+  { labelKey: 'nav.home', to: '/' },
+  { labelKey: 'nav.courses', to: '/courses' },
+  { labelKey: 'nav.about', to: '/about' },
+  { labelKey: 'nav.news', to: '/news' },
+  { labelKey: 'nav.gallery', to: '/gallery' },
+  { labelKey: 'nav.career', to: '/career' },
+  { labelKey: 'nav.contact', to: '/contact' },
 ];
 
 export const programs = [
   {
-    title: 'Career Discovery Lab',
-    detail: 'Explore future paths through guided projects, mentor stories, and reflection prompts.',
-    meta: 'Ages 13-17',
+    titleKey: 'programs.careerLab.title',
+    detailKey: 'programs.careerLab.detail',
+    metaKey: 'programs.careerLab.meta',
     icon: Map,
   },
   {
-    title: 'Real-World Skills Sprint',
-    detail: 'Practice communication, money basics, digital tools, teamwork, and problem solving.',
-    meta: '6-week track',
+    titleKey: 'programs.skillsSprint.title',
+    detailKey: 'programs.skillsSprint.detail',
+    metaKey: 'programs.skillsSprint.meta',
     icon: BookOpenCheck,
   },
   {
-    title: 'Future Builder Portfolio',
-    detail: 'Turn learning into a visible portfolio students can share with parents and schools.',
-    meta: 'Project-based',
+    titleKey: 'programs.portfolio.title',
+    detailKey: 'programs.portfolio.detail',
+    metaKey: 'programs.portfolio.meta',
     icon: BriefcaseBusiness,
   },
 ];
 
 export const courses = [
   {
-    title: 'Career Discovery Lab',
-    meta: 'Foundation',
-    detail: 'A guided introduction to modern career paths, personal strengths, and decision making.',
+    titleKey: 'courses.careerLab.title',
+    metaKey: 'courses.careerLab.meta',
+    detailKey: 'courses.careerLab.detail',
     icon: Compass,
   },
   {
-    title: 'Communication for Real Life',
-    meta: 'Practical skills',
-    detail: 'Practice presentations, interview habits, teamwork, feedback, and professional writing.',
+    titleKey: 'courses.communication.title',
+    metaKey: 'courses.communication.meta',
+    detailKey: 'courses.communication.detail',
     icon: UsersRound,
   },
   {
-    title: 'Money Skills Starter',
-    meta: 'Life readiness',
-    detail: 'Learn budgeting, earning, saving, responsible spending, and simple financial planning.',
+    titleKey: 'courses.money.title',
+    metaKey: 'courses.money.meta',
+    detailKey: 'courses.money.detail',
     icon: Target,
   },
   {
-    title: 'Digital Work Basics',
-    meta: 'Future work',
-    detail: 'Explore tools, workflows, online safety, research, and how digital teams collaborate.',
+    titleKey: 'courses.digital.title',
+    metaKey: 'courses.digital.meta',
+    detailKey: 'courses.digital.detail',
     icon: BriefcaseBusiness,
   },
   {
-    title: 'Portfolio Builder',
-    meta: 'Project track',
-    detail: 'Turn student work into a clear portfolio with projects, reflections, and next steps.',
+    titleKey: 'courses.portfolio.title',
+    metaKey: 'courses.portfolio.meta',
+    detailKey: 'courses.portfolio.detail',
     icon: BookOpenCheck,
   },
   {
-    title: 'Professional Interview Studio',
-    meta: 'Mentor access',
-    detail: 'Prepare questions, meet professionals, and learn what different jobs look like day to day.',
+    titleKey: 'courses.interviewStudio.title',
+    metaKey: 'courses.interviewStudio.meta',
+    detailKey: 'courses.interviewStudio.detail',
     icon: Mic2,
   },
 ];
 
 export const events = [
   {
-    date: 'Jun 12',
-    title: 'Design Your First Career Map',
-    type: 'Online workshop',
+    dateKey: 'events.map.date',
+    titleKey: 'events.map.title',
+    typeKey: 'events.map.type',
   },
   {
-    date: 'Jun 20',
-    title: 'Ask a Product Designer',
-    type: 'Live professional Q&A',
+    dateKey: 'events.designer.date',
+    titleKey: 'events.designer.title',
+    typeKey: 'events.designer.type',
   },
   {
-    date: 'Jul 03',
-    title: 'Money Skills for Teenagers',
-    type: 'Practical skills session',
+    dateKey: 'events.money.date',
+    titleKey: 'events.money.title',
+    typeKey: 'events.money.type',
   },
 ];
 
 export const interviews = [
-  'How a software engineer thinks through hard problems',
-  'What healthcare careers look like beyond becoming a doctor',
-  'From school project to startup idea: a founder conversation',
+  'interviews.engineer',
+  'interviews.healthcare',
+  'interviews.founder',
 ];
 
 export const benefits = [
   {
-    title: 'Students',
-    copy: 'Build confidence, discover strengths, and learn skills that make school feel connected to real life.',
+    titleKey: 'benefits.students.title',
+    copyKey: 'benefits.students.copy',
     icon: GraduationCap,
   },
   {
-    title: 'Parents',
-    copy: 'See structured progress, age-appropriate guidance, and clearer conversations about future choices.',
+    titleKey: 'benefits.parents.title',
+    copyKey: 'benefits.parents.copy',
     icon: ShieldCheck,
   },
   {
-    title: 'Schools & Partners',
-    copy: 'Bring career readiness, professional exposure, and practical learning into student communities.',
+    titleKey: 'benefits.partners.title',
+    copyKey: 'benefits.partners.copy',
     icon: School,
   },
 ];
 
 export const newsItems = [
   {
-    tag: 'Program update',
-    title: 'Freegenero launches new career-readiness workshops for teens',
-    copy: 'The new workshop series helps students connect classroom learning with real-world decisions.',
+    tagKey: 'news.launch.tag',
+    titleKey: 'news.launch.title',
+    copyKey: 'news.launch.copy',
   },
   {
-    tag: 'Interview',
-    title: 'What teenagers learn when professionals tell the truth about work',
-    copy: 'Career stories become more useful when students hear the daily habits, tradeoffs, and surprises.',
+    tagKey: 'news.interviews.tag',
+    titleKey: 'news.interviews.title',
+    copyKey: 'news.interviews.copy',
   },
   {
-    tag: 'Schools',
-    title: 'How schools can bring career exploration into advisory time',
-    copy: 'Short guided activities can help students build future readiness without adding another subject.',
+    tagKey: 'news.schools.tag',
+    titleKey: 'news.schools.title',
+    copyKey: 'news.schools.copy',
   },
 ];
 
 export const galleryItems = [
-  'Career mapping session',
-  'Student portfolio review',
-  'Professional interview room',
-  'Workshop collaboration',
-  'School partner event',
-  'Future skills lab',
+  'gallery.careerMap',
+  'gallery.portfolioReview',
+  'gallery.interviewRoom',
+  'gallery.workshop',
+  'gallery.schoolEvent',
+  'gallery.skillsLab',
 ];
 
 export const roles = [
   {
-    title: 'Student Program Facilitator',
-    type: 'Part-time / hybrid',
-    copy: 'Lead teen workshops, guide discussions, and help students turn curiosity into action.',
+    titleKey: 'roles.facilitator.title',
+    typeKey: 'roles.facilitator.type',
+    copyKey: 'roles.facilitator.copy',
   },
   {
-    title: 'Career Mentor Network Lead',
-    type: 'Full-time',
-    copy: 'Build relationships with professionals and shape safe, useful student interview experiences.',
+    titleKey: 'roles.mentorLead.title',
+    typeKey: 'roles.mentorLead.type',
+    copyKey: 'roles.mentorLead.copy',
   },
   {
-    title: 'Learning Content Designer',
-    type: 'Contract',
-    copy: 'Create practical activities, reflection prompts, and projects for real-world skill tracks.',
+    titleKey: 'roles.designer.title',
+    typeKey: 'roles.designer.type',
+    copyKey: 'roles.designer.copy',
   },
 ];

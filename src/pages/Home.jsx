@@ -16,6 +16,7 @@ import { benefits, events, interviews, programs } from '../content';
 import FeatureCard from '../components/FeatureCard';
 import FinalCta from '../components/FinalCta';
 import RouteLink from '../components/RouteLink';
+import { useLanguage } from '../i18n/LanguageContext';
 import '../styles/pages/Home/Home.css';
 
 function Home() {
@@ -32,35 +33,33 @@ function Home() {
 }
 
 function Hero() {
+  const { t } = useLanguage();
+
   return (
     <section className="hero section" id="top">
       <div className="hero-copy">
-        <p className="eyebrow">
-          Career discovery for teenagers
-        </p>
-        <h1 className='hero-h1'>Help teens find direction before they have to choose a path.</h1>
+        <h1 className="hero-title">{t('home.heroTitle')}</h1>
         <p className="hero-lede">
-          Freegenero helps students explore careers, learn practical skills, and
-          connect with professionals through guided programs built for real life.
+          {t('home.heroCopy')}
         </p>
         <div className="hero-actions">
           <RouteLink className="button button-primary" to="/courses">
-            Explore courses
+            {t('home.heroButton')}
             <ArrowRight size={18} />
           </RouteLink>
         </div>
         <div className="trust-row" aria-label="Freegenero highlights">
           <span>
             <CheckCircle2 size={17} />
-            Teen-friendly
+            {t('home.trustTeen')}
           </span>
           <span>
             <CheckCircle2 size={17} />
-            Parent-trusted
+            {t('home.trustParent')}
           </span>
           <span>
             <CheckCircle2 size={17} />
-            School-ready
+            {t('home.trustSchool')}
           </span>
         </div>
       </div>
@@ -69,15 +68,15 @@ function Hero() {
           <span className="mini-icon">
             <Lightbulb size={19} />
           </span>
-          <strong>Career match</strong>
-          <p>Creative technology</p>
+          <strong>{t('home.careerMatch')}</strong>
+          <p>{t('home.creativeTechnology')}</p>
         </div>
         <div className="workspace-card">
           <div className="workspace-top">
             <span className="avatar">A</span>
             <span className="avatar avatar-yellow">M</span>
             <span className="avatar avatar-blue">R</span>
-            <span className="live-pill">Live mentor room</span>
+            <span className="live-pill">{t('home.liveMentorRoom')}</span>
           </div>
           <div className="screen">
             <div className="screen-sidebar">
@@ -88,21 +87,21 @@ function Hero() {
             <div className="screen-content">
               <div className="chart-line" />
               <div className="skill-grid">
-                <span>Ideas</span>
-                <span>Teams</span>
-                <span>Money</span>
-                <span>Tools</span>
+                <span>{t('home.idea')}</span>
+                <span>{t('home.teams')}</span>
+                <span>{t('home.money')}</span>
+                <span>{t('home.tools')}</span>
               </div>
             </div>
           </div>
           <div className="mentor-note">
             <Mic2 size={18} />
-            <span>Ask a professional how the work really feels.</span>
+            <span>{t('home.mentorNote')}</span>
           </div>
         </div>
         <div className="orbit-card card-skills">
           <strong>4.8/5</strong>
-          <p>student confidence score</p>
+          <p>{t('home.confidenceScore')}</p>
         </div>
       </div>
     </section>
@@ -110,32 +109,30 @@ function Hero() {
 }
 
 function Problem() {
+  const { t } = useLanguage();
+
   return (
     <section className="section problem-section">
       <div className="section-heading narrow">
-        <p className="eyebrow">The problem</p>
-        <h2>Teenagers are asked to plan a future they have barely seen.</h2>
-        <p>
-          Career advice often arrives too late, feels too abstract, or focuses
-          only on grades. Students need earlier exposure to real people, real
-          skills, and real choices.
-        </p>
+        <p className="eyebrow">{t('home.problemEyebrow')}</p>
+        <h2>{t('home.problemTitle')}</h2>
+        <p>{t('home.problemCopy')}</p>
       </div>
       <div className="problem-grid">
         <article className="problem-card">
           <span>01</span>
-          <h3>Unclear options</h3>
-          <p>Students know a few familiar careers, but not the range of modern paths available.</p>
+          <h3>{t('home.problemOneTitle')}</h3>
+          <p>{t('home.problemOneCopy')}</p>
         </article>
         <article className="problem-card">
           <span>02</span>
-          <h3>Skills feel disconnected</h3>
-          <p>Schoolwork can feel separate from communication, finance, digital work, and leadership.</p>
+          <h3>{t('home.problemTwoTitle')}</h3>
+          <p>{t('home.problemTwoCopy')}</p>
         </article>
         <article className="problem-card">
           <span>03</span>
-          <h3>Limited professional access</h3>
-          <p>Many teens do not have a safe, structured way to learn from working professionals.</p>
+          <h3>{t('home.problemThreeTitle')}</h3>
+          <p>{t('home.problemThreeCopy')}</p>
         </article>
       </div>
     </section>
@@ -143,25 +140,27 @@ function Problem() {
 }
 
 function Solution() {
+  const { t } = useLanguage();
+
   return (
-    <section className="section solution-section">
+    <section className="solution-section">
       <div className="solution-panel">
         <div>
-          <p className="eyebrow light">What Freegenero does</p>
-          <h2>A guided bridge between school, skills, and the world of work.</h2>
+          <p className="eyebrow light">{t('home.solutionEyebrow')}</p>
+          <h2>{t('home.solutionTitle')}</h2>
         </div>
         <div className="solution-list">
           <p>
             <Handshake size={20} />
-            Connect students with professionals through interviews, events, and mentor-led sessions.
+            {t('home.solutionOne')}
           </p>
           <p>
             <BookOpenCheck size={20} />
-            Build practical skills with short projects teenagers can actually use.
+            {t('home.solutionTwo')}
           </p>
           <p>
             <UsersRound size={20} />
-            Give parents and schools a clear, structured way to support future readiness.
+            {t('home.solutionThree')}
           </p>
         </div>
       </div>
@@ -170,17 +169,19 @@ function Solution() {
 }
 
 function Programs() {
+  const { t } = useLanguage();
+
   return (
     <section className="section" id="programs">
       <div className="section-heading">
-        <p className="eyebrow">Courses & programs</p>
-        <h2>Practical learning tracks built around exploration.</h2>
+        <p className="eyebrow">{t('home.programsEyebrow')}</p>
+        <h2>{t('home.programsTitle')}</h2>
       </div>
       <div className="card-grid three">
         {programs.map((program) => (
-          <FeatureCard item={program} key={program.title}>
+          <FeatureCard item={program} key={program.titleKey}>
             <RouteLink to="/courses" className="text-link">
-              Learn more
+              {t('common.learnMore')}
               <ChevronRight size={16} />
             </RouteLink>
           </FeatureCard>
@@ -191,25 +192,27 @@ function Programs() {
 }
 
 function Events() {
+  const { t } = useLanguage();
+
   return (
     <section className="section events-section" id="events">
       <div className="split-heading">
         <div>
-          <p className="eyebrow">Events & workshops</p>
-          <h2>Live sessions that turn curiosity into momentum.</h2>
+          <p className="eyebrow">{t('home.eventsEyebrow')}</p>
+          <h2>{t('home.eventsTitle')}</h2>
         </div>
         <RouteLink className="button button-secondary" to="/contact">
-          View calendar
+          {t('home.viewCalendar')}
           <CalendarDays size={18} />
         </RouteLink>
       </div>
       <div className="event-list">
         {events.map((event) => (
-          <article className="event-card" key={event.title}>
-            <div className="event-date">{event.date}</div>
+          <article className="event-card" key={event.titleKey}>
+            <div className="event-date">{t(event.dateKey)}</div>
             <div>
-              <span>{event.type}</span>
-              <h3>{event.title}</h3>
+              <span>{t(event.typeKey)}</span>
+              <h3>{t(event.titleKey)}</h3>
             </div>
             <ChevronRight className="event-arrow" size={22} />
           </article>
@@ -220,6 +223,8 @@ function Events() {
 }
 
 function Interviews() {
+  const { t } = useLanguage();
+
   return (
     <section className="section interviews-section" id="interviews">
       <div className="podcast-card">
@@ -229,17 +234,14 @@ function Interviews() {
           <span />
         </div>
         <div>
-          <p className="eyebrow light">Professional interviews</p>
-          <h2>Hear directly from people doing the work.</h2>
-          <p>
-            Short podcast-style conversations help teenagers understand what
-            different careers look like day to day, not just on paper.
-          </p>
+          <p className="eyebrow light">{t('home.interviewsEyebrow')}</p>
+          <h2>{t('home.interviewsTitle')}</h2>
+          <p>{t('home.interviewsCopy')}</p>
           <ul>
             {interviews.map((item) => (
               <li key={item}>
                 <CheckCircle2 size={18} />
-                {item}
+                {t(item)}
               </li>
             ))}
           </ul>
@@ -250,20 +252,22 @@ function Interviews() {
 }
 
 function Benefits() {
+  const { t } = useLanguage();
+
   return (
     <section className="section" id="benefits">
       <div className="section-heading">
-        <p className="eyebrow">Benefits</p>
-        <h2>Designed for the whole support system around a teenager.</h2>
+        <p className="eyebrow">{t('home.benefitsEyebrow')}</p>
+        <h2>{t('home.benefitsTitle')}</h2>
       </div>
       <div className="card-grid three">
         {benefits.map((benefit) => {
           const Icon = benefit.icon;
           return (
-            <article className="benefit-card" key={benefit.title}>
+            <article className="benefit-card" key={benefit.titleKey}>
               <Icon size={28} />
-              <h3>{benefit.title}</h3>
-              <p>{benefit.copy}</p>
+              <h3>{t(benefit.titleKey)}</h3>
+              <p>{t(benefit.copyKey)}</p>
             </article>
           );
         })}

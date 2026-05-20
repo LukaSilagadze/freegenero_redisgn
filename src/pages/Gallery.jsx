@@ -1,16 +1,19 @@
 import { Image } from 'lucide-react';
 import { galleryItems } from '../content';
 import PageHero from '../components/PageHero';
+import { useLanguage } from '../i18n/LanguageContext';
 import '../styles/pages/Gallery/Gallery.css';
 
 function Gallery() {
+  const { t } = useLanguage();
+
   return (
     <>
       <PageHero
-        eyebrow="Gallery"
+        eyebrow={t('pages.galleryEyebrow')}
         icon={Image}
-        title="Moments from workshops, interviews, and student projects."
-        copy="A visual look at the learning environments Freegenero creates for teenagers and partner schools."
+        title={t('pages.galleryTitle')}
+        copy={t('pages.galleryCopy')}
       />
       <section className="section gallery-grid">
         {galleryItems.map((item, index) => (
@@ -18,7 +21,7 @@ function Gallery() {
             <div className={`gallery-art gallery-art-${(index % 3) + 1}`}>
               <Image size={34} />
             </div>
-            <h3>{item}</h3>
+            <h3>{t(item)}</h3>
           </article>
         ))}
       </section>

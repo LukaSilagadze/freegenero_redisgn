@@ -3,21 +3,24 @@ import { courses } from '../content';
 import FeatureCard from '../components/FeatureCard';
 import FinalCta from '../components/FinalCta';
 import PageHero from '../components/PageHero';
+import { useLanguage } from '../i18n/LanguageContext';
 import '../styles/pages/Courses/Courses.css';
 
 function Courses() {
+  const { t } = useLanguage();
+
   return (
     <>
       <PageHero
-        eyebrow="Courses"
+        eyebrow={t('pages.coursesEyebrow')}
         icon={BookOpenCheck}
-        title="Practical courses for career confidence."
-        copy="Freegenero courses combine short lessons, guided projects, professional insight, and reflection so teenagers can connect learning to real choices."
+        title={t('pages.coursesTitle')}
+        copy={t('pages.coursesCopy')}
       />
       <section className="section page-section">
         <div className="card-grid three">
           {courses.map((course) => (
-            <FeatureCard className="course-card" item={course} key={course.title} />
+            <FeatureCard className="course-card" item={course} key={course.titleKey} />
           ))}
         </div>
       </section>

@@ -2,29 +2,32 @@ import { BriefcaseBusiness, ChevronRight } from 'lucide-react';
 import { roles } from '../content';
 import PageHero from '../components/PageHero';
 import RouteLink from '../components/RouteLink';
+import { useLanguage } from '../i18n/LanguageContext';
 import '../styles/pages/Career/Career.css';
 
 function Career() {
+  const { t } = useLanguage();
+
   return (
     <>
       <PageHero
-        eyebrow="Career"
+        eyebrow={t('pages.careerEyebrow')}
         icon={BriefcaseBusiness}
-        title="Build career readiness with us."
-        copy="Join a team focused on helping teenagers explore meaningful futures through practical learning and professional connection."
+        title={t('pages.careerTitle')}
+        copy={t('pages.careerCopy')}
       />
       <section className="section page-section">
         <div className="role-list">
           {roles.map((role) => (
-            <article className="event-card role-card" key={role.title}>
-              <div className="event-date">Open</div>
+            <article className="event-card role-card" key={role.titleKey}>
+              <div className="event-date">{t('roles.open')}</div>
               <div>
-                <span>{role.type}</span>
-                <h3>{role.title}</h3>
-                <p>{role.copy}</p>
+                <span>{t(role.typeKey)}</span>
+                <h3>{t(role.titleKey)}</h3>
+                <p>{t(role.copyKey)}</p>
               </div>
               <RouteLink to="/contact" className="text-link">
-                Apply
+                {t('common.apply')}
                 <ChevronRight size={16} />
               </RouteLink>
             </article>

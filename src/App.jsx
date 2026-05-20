@@ -8,6 +8,7 @@ import Courses from './pages/Courses';
 import Gallery from './pages/Gallery';
 import Home from './pages/Home';
 import News from './pages/News';
+import { LanguageProvider } from './i18n/LanguageContext';
 import './App.css';
 
 const routes = {
@@ -53,11 +54,13 @@ function App() {
   const Page = useMemo(() => routes[currentPath] || Home, [currentPath]);
 
   return (
-    <main className="site-shell">
-      <Navbar currentPath={routes[currentPath] ? currentPath : '/'} />
-      <Page />
-      <Footer />
-    </main>
+    <LanguageProvider>
+      <main className="site-shell">
+        <Navbar currentPath={routes[currentPath] ? currentPath : '/'} />
+        <Page />
+        <Footer />
+      </main>
+    </LanguageProvider>
   );
 }
 

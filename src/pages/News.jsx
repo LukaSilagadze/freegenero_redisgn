@@ -1,26 +1,29 @@
 import { ChevronRight, Newspaper } from 'lucide-react';
 import { newsItems } from '../content';
 import PageHero from '../components/PageHero';
+import { useLanguage } from '../i18n/LanguageContext';
 import '../styles/pages/News/News.css';
 
 function News() {
+  const { t } = useLanguage();
+
   return (
     <>
       <PageHero
-        eyebrow="News"
+        eyebrow={t('pages.newsEyebrow')}
         icon={Newspaper}
-        title="Updates, interviews, and career-readiness ideas."
-        copy="Follow Freegenero stories from programs, professional interviews, school partnerships, and student skill-building."
+        title={t('pages.newsTitle')}
+        copy={t('pages.newsCopy')}
       />
       <section className="section page-section">
         <div className="news-grid">
           {newsItems.map((item) => (
-            <article className="news-card" key={item.title}>
-              <span>{item.tag}</span>
-              <h3>{item.title}</h3>
-              <p>{item.copy}</p>
+            <article className="news-card" key={item.titleKey}>
+              <span>{t(item.tagKey)}</span>
+              <h3>{t(item.titleKey)}</h3>
+              <p>{t(item.copyKey)}</p>
               <a className="text-link" href="mailto:hello@freegenero.com">
-                Request article
+                {t('news.requestArticle')}
                 <ChevronRight size={16} />
               </a>
             </article>
